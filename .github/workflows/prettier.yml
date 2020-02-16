@@ -1,6 +1,9 @@
 name: Pretter
 
-on: pull_request
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   lint:
@@ -16,5 +19,4 @@ jobs:
           yarn prettier
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
-          commit_message: Apply php-cs-fixer changes
-          branch: ${{ github.head_ref }}
+          commit_message: Apply Prettier Change
