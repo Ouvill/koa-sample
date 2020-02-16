@@ -1,6 +1,6 @@
-import Koa from "koa";
-import logger from "koa-logger";
-import router from "./routes/basic";
+import Koa from 'koa';
+import logger from 'koa-logger';
+import router from './routes/basic';
 
 const app = new Koa();
 
@@ -11,11 +11,11 @@ app.use(async (ctx, next) => {
   } catch (error) {
     ctx.status = ctx.status || 500;
     ctx.body = error.message;
-    ctx.app.emit("error", error, ctx);
+    ctx.app.emit('error', error, ctx);
   }
 });
 
-if (process.env.NODE_ENV !== "production") {
+if (process.env.NODE_ENV !== 'production') {
   app.use(logger());
 }
 
