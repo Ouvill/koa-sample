@@ -10,7 +10,7 @@
     "webpack:dev": "webpack --config webpack.dev.ts --watch",
     "nodemon": "nodemon",
     "build": "webpack --config webpack.pro.ts",
-    "start": "NODE_ENV=production dist/server.js"
+    "start": "NODE_ENV=production node dist/server.js"
   },
   "dependencies": {
     "koa": "^2.11.0",
