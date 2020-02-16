@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "run-p webpack:dev nodemon",
-    "test": "jest --watchAll",
+    "test": "jest",
     "webpack:dev": "webpack --config webpack.dev.ts --watch",
     "nodemon": "nodemon",
     "build": "webpack --config webpack.pro.ts",
