@@ -9,12 +9,14 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 router.get("/", (ctx, next) => {
-  ctx.body = "Hello World";
+  ctx.body = "Hello World!";
 });
 
 app.use(router.routes());
 app.use(router.allowedMethods());
 
-app.listen(3000, () => {
+const server = app.listen(3000, () => {
   console.log(`http://localhost:3000`);
 });
+
+export default server;
