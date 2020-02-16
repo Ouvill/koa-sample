@@ -9,14 +9,16 @@
     "webpack:dev": "webpack --config webpack.dev.ts --watch",
     "nodemon": "nodemon",
     "build": "webpack --config webpack.pro.ts",
-    "start": "dist/server.js"
+    "start": "NODE_ENV=production dist/server.js"
   },
   "dependencies": {
     "koa": "^2.11.0",
+    "koa-logger": "^3.2.1",
     "koa-router": "^8.0.8"
   },
   "devDependencies": {
     "@types/koa": "^2.11.1",
+    "@types/koa-logger": "^3.1.1",
     "@types/koa-router": "^7.4.0",
     "@types/webpack": "^4.41.6",
     "@types/webpack-merge": "^4.1.5",
