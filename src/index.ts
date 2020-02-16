@@ -1,8 +1,8 @@
 import Koa from "koa";
-import Router from "koa-router";
 import logger from "koa-logger";
+import router from "./routes/basic";
+
 const app = new Koa();
-const router = new Router();
 
 //error handling
 app.use(async (ctx, next) => {
@@ -18,10 +18,6 @@ app.use(async (ctx, next) => {
 if (process.env.NODE_ENV !== "production") {
   app.use(logger());
 }
-
-router.get("/", (ctx, next) => {
-  ctx.body = "Hello World!";
-});
 
 app.use(router.routes());
 app.use(router.allowedMethods());
