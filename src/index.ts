@@ -4,6 +4,17 @@ import logger from "koa-logger";
 const app = new Koa();
 const router = new Router();
 
+//error handling
+app.use(async (ctx, next) => {
+  try {
+    await next();
+  } catch (error) {
+    ctx.status = ctx.status || 500;
+    ctx.body = error.message;
+    ctx.app.emit("error", error, ctx);
+  }
+});
+
 if (process.env.NODE_ENV !== "production") {
   app.use(logger());
 }
