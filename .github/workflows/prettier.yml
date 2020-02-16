@@ -5,6 +5,9 @@ on:
     branches:
       - master
 
+env:
+  FILE_PATTERN: "{src,__tests__}/**/*.{ts,tsx,js,jsx}"
+
 jobs:
   lint:
     runs-on: ubuntu-latest
@@ -16,7 +19,7 @@ jobs:
       - name: Run Prettier
         run: |
           yarn install
-          yarn prettier
+          yarn prettier --write ${FILE_PATTERN}
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
           commit_message: Apply Prettier Change
