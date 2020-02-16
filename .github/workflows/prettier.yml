@@ -11,7 +11,7 @@ jobs:
       - name: hub example
         shell: bash
         run: |
-          curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.     14.1
+          curl -fsSL https://github.com/github/hub/raw/master/script/get | bash -s 2.14.1
           bin/hub pr list  # list pull requests in the current repo
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
