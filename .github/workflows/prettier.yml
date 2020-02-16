@@ -11,7 +11,7 @@ jobs:
         with:
           node-version: 12.x
       - name: Run Prettier
-        run:
+        run: |
           yarn install
           yarn prettier
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
