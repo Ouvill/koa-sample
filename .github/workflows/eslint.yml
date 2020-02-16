@@ -1,4 +1,4 @@
-name: Pretter
+name: ESLint
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - master
 
 env:
-  FILE_PATTERN: "{src,__tests__}/**/*.{ts,tsx,js,jsx}"
+  FILE_PATTERN: "{src,__tests__}/**/*.ts"
 
 jobs:
   lint:
@@ -19,7 +19,7 @@ jobs:
       - name: Run Prettier
         run: |
           yarn install
-          yarn prettier --write ${FILE_PATTERN}
+          yarn eslint --fix $
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
           commit_message: Apply Prettier Change
