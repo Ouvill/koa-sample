@@ -1,6 +1,6 @@
 FROM node
 
-RUN mkdir app
+RUN mkdir /app && chown node /app
 WORKDIR /app
 COPY package.json yarn.lock /app/
 RUN yarn install
