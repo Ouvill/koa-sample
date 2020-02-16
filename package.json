@@ -10,7 +10,8 @@
     "webpack:dev": "webpack --config webpack.dev.ts --watch",
     "nodemon": "nodemon",
     "build": "webpack --config webpack.pro.ts",
-    "start": "NODE_ENV=production dist/server.js"
+    "start": "NODE_ENV=production dist/server.js",
+    "prettier": "prettier --write src/**.ts src/**/**.ts"
   },
   "dependencies": {
     "@types/jest": "^25.1.2",
