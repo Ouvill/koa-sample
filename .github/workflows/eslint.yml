@@ -19,7 +19,7 @@ jobs:
       - name: Run Prettier
         run: |
           yarn install
-          yarn eslint --fix $
+          yarn eslint --fix ${FILE_PATTERN}
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
           commit_message: Apply Prettier Change
