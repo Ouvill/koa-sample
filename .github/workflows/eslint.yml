@@ -1,9 +1,9 @@
 name: ESLint
 
 on:
-  push:
-    branches:
-      - master
+  pull_request:
+    # branches:
+    #   - master
 
 env:
   FILE_PATTERN: "{src,__tests__}/**/*.ts"
@@ -13,6 +13,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
       - uses: actions/setup-node@v1
         with:
           node-version: 12.x
@@ -23,3 +25,4 @@ jobs:
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
         with:
           commit_message: Apply Prettier Change
+          ref: ${{ github.head_ref }}
